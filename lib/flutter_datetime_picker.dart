@@ -404,49 +404,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              child: widget.pickerModel.layoutProportions()[0] > 0
-                  ? _renderColumnView(
-                      ValueKey(widget.pickerModel.currentLeftIndex()),
-                      theme,
-                      widget.pickerModel.leftStringAtIndex,
-                      leftScrollCtrl,
-                      widget.pickerModel.layoutProportions()[0], (index) {
-                      widget.pickerModel.setLeftIndex(index);
-                    }, (index) {
-                      setState(() {
-                        refreshScrollOffset();
-                        _notifyDateChanged();
-                      });
-                    })
-                  : null,
-            ),
-            Text(
-              widget.pickerModel.leftDivider(),
-              style: theme.itemStyle,
-            ),
-            Container(
-              child: widget.pickerModel.layoutProportions()[1] > 0
-                  ? _renderColumnView(
-                      ValueKey(widget.pickerModel.currentLeftIndex()),
-                      theme,
-                      widget.pickerModel.middleStringAtIndex,
-                      middleScrollCtrl,
-                      widget.pickerModel.layoutProportions()[1], (index) {
-                      widget.pickerModel.setMiddleIndex(index);
-                    }, (index) {
-                      setState(() {
-                        refreshScrollOffset();
-                        _notifyDateChanged();
-                      });
-                    })
-                  : null,
-            ),
-            Text(
-              widget.pickerModel.rightDivider(),
-              style: theme.itemStyle,
-            ),
-            Container(
+             Container(
               child: widget.pickerModel.layoutProportions()[2] > 0
                   ? _renderColumnView(
                       ValueKey(widget.pickerModel.currentMiddleIndex() * 100 +
@@ -464,6 +422,53 @@ class _DatePickerState extends State<_DatePickerComponent> {
                     })
                   : null,
             ),
+             Text(
+              widget.pickerModel.leftDivider(),
+              style: theme.itemStyle,
+            ),
+
+             Container(
+              child: widget.pickerModel.layoutProportions()[1] > 0
+                  ? _renderColumnView(
+                      ValueKey(widget.pickerModel.currentLeftIndex()),
+                      theme,
+                      widget.pickerModel.middleStringAtIndex,
+                      middleScrollCtrl,
+                      widget.pickerModel.layoutProportions()[1], (index) {
+                      widget.pickerModel.setMiddleIndex(index);
+                    }, (index) {
+                      setState(() {
+                        refreshScrollOffset();
+                        _notifyDateChanged();
+                      });
+                    })
+                  : null,
+            ),
+             Text(
+              widget.pickerModel.rightDivider(),
+              style: theme.itemStyle,
+            ),
+            Container(
+              child: widget.pickerModel.layoutProportions()[0] > 0
+                  ? _renderColumnView(
+                      ValueKey(widget.pickerModel.currentLeftIndex()),
+                      theme,
+                      widget.pickerModel.leftStringAtIndex,
+                      leftScrollCtrl,
+                      widget.pickerModel.layoutProportions()[0], (index) {
+                      widget.pickerModel.setLeftIndex(index);
+                    }, (index) {
+                      setState(() {
+                        refreshScrollOffset();
+                        _notifyDateChanged();
+                      });
+                    })
+                  : null,
+            ),
+           
+           
+           
+           
           ],
         ),
       ),
