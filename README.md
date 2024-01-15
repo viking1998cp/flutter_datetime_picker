@@ -1,6 +1,13 @@
-# Flutter Datetime Picker
+# Flutter Datetime Picker Plus
 
-[(Pub) flutter_datetime_picker](https://pub.dev/packages/flutter_datetime_picker)
+Forked from [(Pub) flutter_datetime_picker](https://pub.dev/packages/flutter_datetime_picker) as it had issues with dart 3.0/Flutter 3.10.
+
+This package only works on Flutter >=3.10.0. If you need an older version, please use the original package.
+
+[(Pub) flutter_datetime_picker_plus](https://pub.dev/packages/flutter_datetime_picker_plus)
+
+
+# Documentation
 
 A flutter date time picker inspired by [flutter-cupertino-date-picker](https://github.com/wuzhendev/flutter-cupertino-date-picker)
 
@@ -36,6 +43,7 @@ you can choose date / time / date&time in multiple languages:
 - Turkish(tr)
 - Vietnamese(vi)
 - Khmer(kh)
+- India(hi)
 
 
 and you can also custom your own picker content
